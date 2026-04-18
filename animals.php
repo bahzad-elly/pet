@@ -8,7 +8,7 @@ if (!isset($_SESSION['name'])) {
     exit();
 }
 
-$result = mysqli_query($connection, "SELECT * FROM animals");
+$result = mysqli_query($connection, "SELECT a.name,a.species,a.breed,a.age,a.status ,i.sname FROM animals a left join intake_source i on a.intake_id =i.iid; ");
 
 /*
 CRUD 
@@ -64,6 +64,7 @@ padding: 30px;
                             <th>Breed</th>
                             <th>Age</th>
                             <th>Status</th>
+                            <th>intake source</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,6 +81,7 @@ padding: 30px;
                                     <?php echo $array['status']; ?>
                                 </span>
                             </td>
+                            <td><?php echo $array['sname']; ?></td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>

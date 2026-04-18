@@ -1,14 +1,16 @@
 <?php
 include 'connect.php';
 session_start();
-if (!isset($_SESSION['name'])) header("Location: index.php");
+if (!isset($_SESSION['name'])){
+     header("Location: index.php");
+}
 
 
 if ($_POST) {
-    $sname = mysqli_real_escape_string($connection, $_POST['sname']);
-    $stype = mysqli_real_escape_string($connection, $_POST['stype']);
-    $phone = mysqli_real_escape_string($connection, $_POST['phone']);
-    $address = mysqli_real_escape_string($connection, $_POST['address']);
+    $sname =$_POST['sname'];
+    $stype =$_POST['stype'];
+    $phone =$_POST['phone'];
+    $address =$_POST['address'];
 
     $sql = "INSERT INTO intake_source (sname, stype, phone, address) 
             VALUES ('$sname', '$stype', '$phone', '$address')";
@@ -62,7 +64,7 @@ padding: 30px;
                         <input name="sname" class="form-control" placeholder="Source Name" required>
                     </div>
                     <div class="col-md-2">
-                        <input name="stype" class="form-control" placeholder="Type (e.g. NGO)">
+                        <input name="stype" class="form-control" placeholder="Type">
                     </div>
                     <div class="col-md-2">
                         <input name="phone" class="form-control" placeholder="Phone">
