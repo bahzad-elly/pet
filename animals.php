@@ -8,6 +8,7 @@ if (!isset($_SESSION['name'])) {
     exit();
 }
 
+// boya left joinman danawa labar way hamu datakan bgarenetawa agar wargrishman nabe hich nishan nadat , wata null bgarenetawa
 $result = mysqli_query($connection, "SELECT a.name,a.species,a.breed,a.age,a.status ,i.sname FROM animals a left join intake_source i on a.intake_id =i.iid; ");
 
 /*
