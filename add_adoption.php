@@ -7,10 +7,7 @@ if (!isset($_SESSION['name'])) {
     exit();
 }
 
-// Fetch available animals
 $animals_query = mysqli_query($connection, "SELECT animal_id, name FROM animals WHERE status = 'Available'");
-
-// Fetch all adopters
 $adopters_query = mysqli_query($connection, "SELECT adopterId, fname, lname FROM adopters");
 
 if ($_POST) {
@@ -19,16 +16,15 @@ if ($_POST) {
     $adoption_date = $_POST['adoption_date'];
     $user_id = $_SESSION['uid'];
 
-    // Start transaction to ensure both operations succeed
     mysqli_begin_transaction($connection);
 
     try {
-        // Insert adoption record
+    
         $sql_insert = "INSERT INTO adoption (adopter_id, animal_id, adoptiondate, user_id) 
                        VALUES ('$adopter_id', '$animal_id', '$adoption_date', '$user_id')";
         mysqli_query($connection, $sql_insert);
 
-        // Update animal status
+   
         $sql_update = "UPDATE animals SET status = 'Adopted' WHERE animal_id = '$animal_id'";
         mysqli_query($connection, $sql_update);
 
