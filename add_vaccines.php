@@ -19,7 +19,7 @@ if ($_POST) {
             VALUES ('$vaccine', '$description', '$frequency_months')";
     
     if (mysqli_query($connection, $sql)) {
-        header("Location: animals.php");
+        header("Location: vaccination_type.php");
     }
 }
 ?>

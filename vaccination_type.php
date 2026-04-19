@@ -61,6 +61,7 @@ padding: 30px;
                             <th>vaccine Name</th>
                             <th>Description</th>
                             <th>F-month</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,6 +69,11 @@ padding: 30px;
                             <td><strong><?php echo $array['vaccine_name']; ?></strong></td>
                             <td><?php echo $array['description']; ?></td>
                             <td><?php echo $array['frequency_months']; ?> month</td>
+                            <td>
+                            <a href="delete_vaccine.php?id=<?php echo $array['vtype_id']; ?>" 
+                                 class="btn btn-danger btn-sm" 
+                                 onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>

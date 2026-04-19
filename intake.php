@@ -83,21 +83,28 @@ padding: 30px;
             <table class="table table-hover mb-0">
                 <thead class="table-dark">
                     <tr>
-                        <th>ID</th>
                         <th>Source Name</th>
                         <th>Type</th>
                         <th>Phone</th>
                         <th>Address</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php for ($i = 0; $i < $total; $i++): ?>
                     <tr>
-                        <td><?php echo $sources[$i]['iid']; ?></td>
                         <td><strong><?php echo $sources[$i]['sname']; ?></strong></td>
                         <td><?php echo $sources[$i]['stype']; ?></td>
                         <td><?php echo $sources[$i]['phone']; ?></td>
                         <td><?php echo $sources[$i]['address']; ?></td>
+                        <td>
+    <a href="deletes.php?iid=<?php echo $sources[$i]['iid']; ?>" 
+       class="btn btn-danger btn-sm" 
+       onclick="return confirm('Delete this source?')">
+       Delete
+    </a>
+</td>
+                        
                     </tr>
                     <?php endfor; ?>
                     <?php if($total == 0): ?>

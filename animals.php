@@ -9,7 +9,7 @@ if (!isset($_SESSION['name'])) {
 }
 
 // boya left joinman danawa labar way hamu datakan bgarenetawa agar wargrishman nabe hich nishan nadat , wata null bgarenetawa
-$result = mysqli_query($connection, "SELECT a.name,a.species,a.breed,a.age,a.status ,i.sname FROM animals a left join intake_source i on a.intake_id =i.iid; ");
+$result = mysqli_query($connection, "SELECT a.animal_id,a.name,a.species,a.breed,a.age,a.status ,i.sname FROM animals a left join intake_source i on a.intake_id =i.iid; ");
 
 /*
 CRUD 
@@ -66,6 +66,7 @@ padding: 30px;
                             <th>Age</th>
                             <th>Status</th>
                             <th>intake source</th>
+                            <th>actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,6 +84,11 @@ padding: 30px;
                                 </span>
                             </td>
                             <td><?php echo $array['sname']; ?></td>
+                            <td>
+                            <a href="deletes.php?id=<?php echo $array['animal_id']; ?>" 
+                                 class="btn btn-danger btn-sm" 
+                                 onclick="return confirm('Are you sure?')">Delete</a>
+                        </td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>
