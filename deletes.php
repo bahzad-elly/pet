@@ -48,4 +48,34 @@ if (isset($_GET['uid'])) {
     }
 }
 
+// delete adopters
+if (isset($_GET['adp_id'])) {
+    $adp_id = (int)$_GET['adp_id'];
+    $sql5 = "DELETE FROM adopters WHERE adopterId = $adp_id";
+
+    if (mysqli_query($connection, $sql5)) {
+        header("Location: adopters.php"); 
+    }
+}
+
+// delete adoptions
+if (isset($_GET['adopt_id'])) {
+    $adopt_id = (int)$_GET['adopt_id'];
+    $sql6 = "DELETE FROM adoption WHERE adoption_id = $adopt_id";
+
+    if (mysqli_query($connection, $sql6)) {
+        header("Location: adoption.php"); 
+    }
+}
+
+// delete medical records
+if (isset($_GET['rec_id'])) {
+    $rec_id = (int)$_GET['rec_id'];
+    $sql7 = "DELETE FROM medical_record WHERE record_id = $rec_id";
+
+    if (mysqli_query($connection, $sql7)) {
+        header("Location: medical_record.php"); 
+    }
+}
+
 ?>
