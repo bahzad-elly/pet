@@ -6,6 +6,10 @@
         <a href="adopters.php">Adopters</a>
         <a href="intake.php">intake</a>
         <a href="vaccination_type.php">vaccines</a>
+        <a href="animal_vacines.php">animal vaccines</a>
+        <a href="users.php">Users</a>
+        <a href="add_user.php">Add User</a>
+        <a href="add_animals.php">add animals</a>
         <hr class="text-white">
-        <a href="index.php" class="text-danger"> Logout</a>
+        <a href="logout.php" class="text-danger"> Logout</a>
     </div>

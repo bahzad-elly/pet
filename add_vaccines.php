@@ -43,9 +43,8 @@ if ($_POST) {
             <div class="card-body">
                 <form method="POST">
                     <input name="name" class="form-control mb-2" placeholder="Name" required>
-                    <input name="desc" class="form-control mb-2" placeholder="Species" required>
-                    <input name="breed" class="form-control mb-2" placeholder="Breed">
-                    <input type="number" name="month" class="form-control mb-2" placeholder="Age">
+                    <input name="desc" class="form-control mb-2" placeholder="Description" required>
+                    <input type="number" name="month" class="form-control mb-2" placeholder="Frequency (Months)" required>
                     
 
                     <button type="submit" class="btn btn-success w-100">Save vaccine</button>

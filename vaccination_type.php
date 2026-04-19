@@ -66,11 +66,12 @@ padding: 30px;
                     </thead>
                     <tbody>
                         <?php while($array = mysqli_fetch_assoc($result)): ?>
+                        <tr>
                             <td><strong><?php echo $array['vaccine_name']; ?></strong></td>
                             <td><?php echo $array['description']; ?></td>
                             <td><?php echo $array['frequency_months']; ?> month</td>
                             <td>
-                            <a href="delete_vaccine.php?id=<?php echo $array['vtype_id']; ?>" 
+                            <a href="deletes.php?vid=<?php echo $array['vtype_id']; ?>" 
                                  class="btn btn-danger btn-sm" 
                                  onclick="return confirm('Are you sure?')">Delete</a>
                         </td>

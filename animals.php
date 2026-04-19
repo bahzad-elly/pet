@@ -71,6 +71,7 @@ padding: 30px;
                     </thead>
                     <tbody>
                         <?php while($array = mysqli_fetch_assoc($result)): ?>
+                        <tr>
                             <td><strong><?php echo $array['name']; ?></strong></td>
                             <td><?php echo $array['species']; ?></td>
                             <td><?php echo $array['breed']; ?></td>

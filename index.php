@@ -12,6 +12,7 @@ $res = mysqli_query($connection, "SELECT * FROM users WHERE username='$user' AND
     if ($row = mysqli_fetch_assoc($res)) {
 
         $_SESSION['name'] = $row['fullname'];
+        $_SESSION['uid'] = $row['uid'];
 
         header("Location: dashboard.php");
 
