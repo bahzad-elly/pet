@@ -34,7 +34,7 @@ if ($_POST) {
     <?php include "sidebar.php"; ?>
     <div class="main-content">
         <div class="card shadow-sm mx-auto" style="max-width: 500px;">
-            <div class="card-header bg-primary text-white">Add New User</div>
+            <div class="card-header bg-secondary text-white">Add New User</div>
             <div class="card-body">
                 <form method="POST">
                     <label class="small">Username</label>

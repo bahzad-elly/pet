@@ -10,10 +10,29 @@ $result = mysqli_query($connection, $sql);
 <html>
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
     <style>
-        .sidebar { height: 100vh; width: 250px; position: fixed; background: #212529; }
-        .sidebar a { color: white; text-decoration: none; display: block; padding: 15px; }
-        .main-content { margin-left: 250px; padding: 30px; }
+        
+.sidebar { 
+height: 100vh; 
+width: 250px;
+position: fixed;
+padding-top: 20px; 
+}
+.sidebar a {
+color: white;
+text-decoration: none;
+display: block;
+padding: 15px; 
+}
+.sidebar a:hover { 
+background:rgb(12, 194, 244);
+}
+.main-content {
+margin-left: 250px;
+padding: 30px; 
+}
+
     </style>
 </head>
 <body>
@@ -21,7 +40,7 @@ $result = mysqli_query($connection, $sql);
     <div class="main-content">
         <div class="d-flex justify-content-between mb-4">
             <h2>User Management</h2>
-            <a href="add_user.php" class="btn btn-primary btn-sm">+ Add New User</a>
+            <a href="add_user.php" class="btn btn-info btn-sm text-dark">+ Add New User</a>
         </div>
         <div class="card shadow-sm">
             <table class="table table-hover mb-0">

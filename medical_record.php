@@ -32,7 +32,7 @@ $result = mysqli_query($connection, $query);
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Medical Records</h2>
-            <a href="add_medical_record.php" class="btn btn-success">+ Add Medical Record</a>
+            <a href="add_medical_record.php" class="btn btn-info">+ Add Medical Record</a>
         </div>
         <div class="card shadow-sm">
             <div class="card-body p-0">

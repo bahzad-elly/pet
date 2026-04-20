@@ -27,7 +27,7 @@ $result = mysqli_query($connection, "SELECT * FROM adopters ORDER BY created_at 
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Adopters</h2>
-            <a href="add_adopter.php" class="btn btn-success">+ Add New Adopter</a>
+            <a href="add_adopter.php" class="btn btn-info">+ Add New Adopter</a>
         </div>
         <div class="card shadow-sm">
             <div class="card-body p-0">

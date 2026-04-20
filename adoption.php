@@ -34,7 +34,7 @@ $result = mysqli_query($connection, $query);
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Adoption Records</h2>
-            <a href="add_adoption.php" class="btn btn-success">+ Record New Adoption</a>
+            <a href="add_adoption.php" class="btn btn-info">+ Record New Adoption</a>
         </div>
         <div class="card shadow-sm">
             <div class="card-body p-0">

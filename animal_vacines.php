@@ -41,7 +41,7 @@ $result = mysqli_query($connection, $sql);
     <div class="main-content">
         <div class="d-flex justify-content-between mb-4">
             <h2>Vaccination History</h2>
-            <a href="add_animal_vaccines.php" class="btn btn-primary btn-sm">+ Add New</a>
+            <a href="add_animal_vaccines.php" class="btn btn-info btn-sm">+ Add New</a>
         </div>
         <div class="card shadow-sm">
             <table class="table table-hover mb-0">

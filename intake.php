@@ -57,7 +57,7 @@ padding: 30px;
         <h2>Intake Management</h2>
         
         <div class="card shadow-sm mb-4">
-            <div class="card-header bg-primary text-white">Add Intake Source</div>
+            <div class="card-header bg-dark text-white">Add Intake Source</div>
             <div class="card-body">
                 <form method="POST" class="row g-2">
                     <div class="col-md-3">
@@ -73,7 +73,7 @@ padding: 30px;
                         <input name="address" class="form-control" placeholder="Address">
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-success w-100">Add Source</button>
+                        <button class="btn btn-info w-100">Add Source</button>
                     </div>
                 </form>
             </div>

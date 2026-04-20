@@ -1,4 +1,4 @@
- <div class="sidebar bg-primary">
+ <div class="sidebar bg-secondary">
         <h4 class="text-white text-center">Pet Shelter</h4>
         <hr class="text-white">
         <a href="dashboard.php">Dashboard</a>
@@ -11,5 +11,5 @@
         <a href="animal_vacines.php">Animal Vaccines</a>
         <a href="users.php">Users</a>
         <hr class="text-white">
-        <a href="logout.php" class="text-danger"> Logout</a>
+        <a href="logout.php" class="text-dark"> Logout</a>
     </div>

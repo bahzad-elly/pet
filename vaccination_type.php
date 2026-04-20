@@ -51,7 +51,7 @@ padding: 30px;
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Vaccinations</h2>
-            <a href ="add_vaccines.php" class="bg-success text-white p-2 rounded-2">+ Add New vaccine</a>
+            <a href ="add_vaccines.php" class="bg-info text-dark p-2 rounded-2 text-decoration-none">+ Add New vaccine</a>
         </div>
         <div class="card shadow-sm">
             <div class="card-body p-0">

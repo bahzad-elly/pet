@@ -42,7 +42,7 @@ if ($_POST) {
 
     <div class="main-content">
         <div class="card shadow-sm mx-auto" style="max-width: 500px;">
-            <div class="card-header bg-primary text-white">Add Animal & Select Intake</div>
+            <div class="card-header bg-secondary text-white">Add Animal & Select Intake</div>
             <div class="card-body">
                 <form method="POST">
                     <input name="name" class="form-control mb-2" placeholder="Name" required>

@@ -52,21 +52,28 @@ padding: 30px;
             
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <div class="card bg-primary text-white p-3 text-center">
+                     <a href="animals.php" style="text-decoration:none">
+                    <div class="card bg-info text-dark p-3 text-center">
                         <h5>Animals</h5>
                         <h3><?php echo $total_animals['totalAnimal']; ?></h3>
-                    </div>
+                     </div>
+                     </a> 
                 </div>
                 <div class="col-md-4">
-                    <div class="card bg-success text-white p-3 text-center">
+                    <a href="adoption.php" style="text-decoration:none">
+                        <div class="card bg-success text-dark p-3 text-center">
                         <h5>Adoptions</h5>
                         <h3><?php echo $adops['totaladops']; ?></h3>
-                    </div>
+                  </div>
+                  </a>
                 </div>
                 <div class="col-md-4">
-                    <div class="card bg-warning text-dark p-3 text-center">
-                        <h5>Users</h5>
-                        <h3><?php echo $total_users['totalusers']; ?></h3>
+                   <a href="users.php" style="text-decoration:none;">
+                        <div class="card bg-warning text-dark p-3 text-center">
+                            <h5>Users</h5>
+                            <h3><?php echo $total_users['totalusers']; ?></h3>
+                         </div>
+                    </a>
                     </div>
                 </div>
             </div>

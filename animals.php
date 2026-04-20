@@ -53,7 +53,7 @@ padding: 30px;
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Animal Records</h2>
-            <a href ="add_animals.php" class="bg-success text-white p-2 rounded-2">+ Add New Animal</a>
+            <a href ="add_animals.php" class="bg-info text-dark p-2 rounded-2 text-decoration-none">+ Add New Animal</a>
         </div>
         <div class="card shadow-sm">
             <div class="card-body p-0">
