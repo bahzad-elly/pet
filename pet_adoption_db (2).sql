@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2026 at 05:30 AM
+-- Generation Time: May 15, 2026 at 06:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -145,7 +145,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `username`, `password`, `role`, `fullname`, `email`, `created_at`, `updated_at`) VALUES
-(3, 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'admin', 'bahzad', 'admin@shelter.com', '2026-02-28 21:15:49', '2026-04-16 00:15:51');
+(1, 'bahzad', '$2a$10$ow3746iEyHm3a6JJQ.T0/u12YZSHfdLwLHG/45xZWu4z2.fzoJfUG', 'admin', 'bahzad', 'bahzad@gmail.com', '2026-05-15 10:38:51', '2026-05-15 10:38:51'),
+(3, 'admin', '$2a$10$ow3746iEyHm3a6JJQ.T0/u12YZSHfdLwLHG/45xZWu4z2.fzoJfUG', 'admin', 'bahzad', 'admin@shelter.com', '2026-02-28 21:15:49', '2026-05-15 10:35:49');
 
 -- --------------------------------------------------------
 

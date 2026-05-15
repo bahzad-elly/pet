@@ -1,6 +1,6 @@
 <?php
-include 'connect.php';
 session_start();
+include 'connect.php';
 
 //check for security . 
 if (!isset($_SESSION['name'])) {
@@ -22,59 +22,55 @@ delete
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Types | Pet Shelter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-.sidebar { 
-height: 100vh; 
-width: 250px;
-position: fixed;
-padding-top: 20px; 
-}
-.sidebar a {
-color: white;
-text-decoration: none;
-display: block;
-padding: 15px; 
-}
-.sidebar a:hover { 
-background:rgb(12, 194, 244);
-}
-.main-content {
-margin-left: 250px;
-padding: 30px; 
-}
-</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php include "sidebar.php"; ?>
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Vaccinations</h2>
-            <a href ="add_vaccines.php" class="bg-info text-dark p-2 rounded-2 text-decoration-none">+ Add New vaccine</a>
+            <div>
+                <h2 class="fw-bold mb-0">Vaccine Library</h2>
+                <p class="text-secondary small">Define and manage available vaccination types</p>
+            </div>
+            <a href="add_vaccines.php" class="btn btn-primary"><i class="fas fa-plus me-2"></i> Add New Vaccine</a>
         </div>
-        <div class="card shadow-sm">
-            <div class="card-body p-0">
-                <table class="table table-hover mb-0">
-                    <thead class="table-dark">
+
+        <div class="card shadow-sm border-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
                         <tr>
-                            <th>vaccine Name</th>
+                            <th>Vaccine Name</th>
                             <th>Description</th>
-                            <th>F-month</th>
-                            <th>Action</th>
+                            <th>Frequency</th>
+                            <th class="text-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while($array = mysqli_fetch_assoc($result)): ?>
                         <tr>
-                            <td><strong><?php echo $array['vaccine_name']; ?></strong></td>
-                            <td><?php echo $array['description']; ?></td>
-                            <td><?php echo $array['frequency_months']; ?> month</td>
                             <td>
-                            <a href="deletes.php?vid=<?php echo $array['vtype_id']; ?>" 
-                                 class="btn btn-danger btn-sm" 
-                                 onclick="return confirm('Are you sure?')">Delete</a>
-                        </td>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light p-2 rounded-circle me-3 text-info">
+                                        <i class="fas fa-vial"></i>
+                                    </div>
+                                    <div class="fw-bold"><?php echo $array['vaccine_name']; ?></div>
+                                </div>
+                            </td>
+                            <td><span class="text-muted small"><?php echo $array['description']; ?></span></td>
+                            <td><span class="badge bg-light text-dark fw-normal border">Every <?php echo $array['frequency_months']; ?> Months</span></td>
+                            <td class="text-end">
+                                <a href="edit_vaccine_type.php?id=<?php echo $array['vtype_id']; ?>" class="btn btn-light btn-sm text-primary me-2 shadow-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="deletes.php?vid=<?php echo $array['vtype_id']; ?>" class="btn btn-light btn-sm text-danger shadow-sm" onclick="return confirm('Are you sure?')">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>
@@ -82,6 +78,5 @@ padding: 30px;
             </div>
         </div>
     </div>
-
 </body>
 </html>

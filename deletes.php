@@ -1,6 +1,6 @@
 <?php
-include 'connect.php';
 session_start();
+include 'connect.php';
 
 //delete animals
 if (!isset($_SESSION['name'])){

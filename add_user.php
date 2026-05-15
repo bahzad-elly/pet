@@ -1,14 +1,14 @@
 <?php
-include 'connect.php';
 session_start();
+include 'connect.php';
 if (!isset($_SESSION['name'])) header("Location: index.php");
 
 if ($_POST) {
-    $user = $_POST['username'];
-    $pass = hash('sha256', $_POST['password']); 
-    $fname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $role = $_POST['role'];
+    $user = mysqli_real_escape_string($connection, $_POST['username']);
+    $pass = password_hash($_POST['password'], PASSWORD_DEFAULT); 
+    $fname = mysqli_real_escape_string($connection, $_POST['fullname']);
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $role = mysqli_real_escape_string($connection, $_POST['role']);
 
     $sql = "INSERT INTO users (username, password, fullname, email, role) 
             VALUES ('$user', '$pass', '$fname', '$email', '$role')";

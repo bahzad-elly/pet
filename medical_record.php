@@ -1,6 +1,6 @@
 <?php
-include 'connect.php';
 session_start();
+include 'connect.php';
 
 if (!isset($_SESSION['name'])) {
     header("Location: index.php");
@@ -18,49 +18,61 @@ $result = mysqli_query($connection, $query);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Medical Records</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records | Pet Shelter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .sidebar { height: 100vh; width: 250px; position: fixed; padding-top: 20px; }
-        .sidebar a { color: white; text-decoration: none; display: block; padding: 15px; }
-        .sidebar a:hover { background:rgb(12, 194, 244); }
-        .main-content { margin-left: 250px; padding: 30px; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php include "sidebar.php"; ?>
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Medical Records</h2>
-            <a href="add_medical_record.php" class="btn btn-info">+ Add Medical Record</a>
+            <div>
+                <h2 class="fw-bold mb-0">Medical Records</h2>
+                <p class="text-secondary small">Comprehensive health history for all animals</p>
+            </div>
+            <a href="add_medical_record.php" class="btn btn-primary"><i class="fas fa-plus me-2"></i> Add Medical Record</a>
         </div>
-        <div class="card shadow-sm">
-            <div class="card-body p-0">
-                <table class="table table-hover mb-0">
-                    <thead class="table-dark">
+
+        <div class="card shadow-sm border-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
                         <tr>
                             <th>Animal</th>
                             <th>Visit Type</th>
-                            <th>Treatment</th>
-                            <th>Diagnosis</th>
+                            <th>Diagnosis & Treatment</th>
                             <th>Treated By</th>
                             <th>Date</th>
-                            <th>Actions</th>
+                            <th class="text-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while($row = mysqli_fetch_assoc($result)): ?>
                         <tr>
-                            <td><strong><?php echo $row['animal_name']; ?></strong></td>
-                            <td><?php echo $row['visit_type']; ?></td>
-                            <td><?php echo $row['treatment']; ?></td>
-                            <td><?php echo $row['diagnoses']; ?></td>
-                            <td><?php echo $row['treatedBy']; ?></td>
-                            <td><?php echo date('Y-m-d', strtotime($row['created_at'])); ?></td>
                             <td>
-                                <a href="deletes.php?rec_id=<?php echo $row['record_id']; ?>" 
-                                   class="btn btn-danger btn-sm" 
-                                   onclick="return confirm('Are you sure you want to delete this medical record?')">Delete</a>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-light p-2 rounded-circle me-3 text-rose">
+                                        <i class="fas fa-file-medical"></i>
+                                    </div>
+                                    <div class="fw-bold"><?php echo $row['animal_name']; ?></div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-light text-dark fw-normal border"><?php echo $row['visit_type']; ?></span></td>
+                            <td>
+                                <div class="small fw-semibold"><?php echo $row['diagnoses']; ?></div>
+                                <div class="text-muted small"><?php echo $row['treatment']; ?></div>
+                            </td>
+                            <td><span class="text-muted small"><?php echo $row['treatedBy']; ?></span></td>
+                            <td><span class="text-muted small"><?php echo date('M d, Y', strtotime($row['created_at'])); ?></span></td>
+                            <td class="text-end">
+                                <a href="edit_medical_record.php?id=<?php echo $row['record_id']; ?>" class="btn btn-light btn-sm text-primary me-2 shadow-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="deletes.php?rec_id=<?php echo $row['record_id']; ?>" class="btn btn-light btn-sm text-danger shadow-sm" onclick="return confirm('Are you sure?')">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                             </td>
                         </tr>
                         <?php endwhile; ?>
